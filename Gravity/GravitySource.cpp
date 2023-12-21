@@ -5,7 +5,7 @@ GravitySource::GravitySource(float pos_x, float pos_y, float size, float str) : 
 {
     this->str = str;
     obj_shape.setFillColor(sf::Color::Yellow);
-    
+    type = SpaceObjectType::GRAVITYSOURCE;
 }
 
 

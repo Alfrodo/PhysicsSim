@@ -136,12 +136,14 @@
     <ClCompile Include="GravitySource.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="Space.cpp" />
     <ClCompile Include="SpaceObject.cpp" />
     <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GravitySource.h" />
     <ClInclude Include="Particle.h" />
+    <ClInclude Include="Space.h" />
     <ClInclude Include="SpaceObject.h" />
     <ClInclude Include="UIManager.h" />
   </ItemGroup>

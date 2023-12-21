@@ -5,6 +5,7 @@
 class Particle : public SpaceObject
 {
     sf::Vector2f vel;
+    SpaceObjectType type;
 
 public:
     Particle(float pos_x, float pos_y, float size, sf::Vector2f vel);

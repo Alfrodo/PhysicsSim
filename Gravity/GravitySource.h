@@ -5,6 +5,7 @@
 class GravitySource : public SpaceObject
 {
     float str;
+    SpaceObjectType type;
 
 public:
     GravitySource(float pos_x, float pos_y, float size, float str);

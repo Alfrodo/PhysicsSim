@@ -5,7 +5,7 @@
     {
         this->vel = vel;
         obj_shape.setFillColor(sf::Color::Green);
-
+        type = SpaceObjectType::PARTICLE;
     }
 
 

@@ -7,6 +7,8 @@
 #include <vector>
 #include <iomanip>
 #include <sstream>
+#include "Space.h"
+#include <random>
 
 UIManager UI;
 
@@ -23,11 +25,20 @@ int main()
     window.setFramerateLimit(60);
     UI.initUI();
 
+    //Init Space
+    Space space = Space();
+    //Init Objects and add to Space
+    space.addGravitySource(new GravitySource(1200, 500, 15, 30000));
+    space.addGravitySource(new GravitySource (400, 500, 15, 30000));
 
-    //Init Objects
-    GravitySource src(800, 500, 15, 30000);
-    Particle particle(500, 800, 5, sf::Vector2f(0,5));
-    Particle particle2(500, 200, 5, sf::Vector2f(0, 5));
+
+    //Add 100 random spawned particles
+
+    for (int i = 0; i < 1000; i++)
+    {
+        space.addParticle(new Particle (rand() % 1600, rand() % 1000, 5, sf::Vector2f(6, 0)));
+    }
+
 
     while (window.isOpen())
     {
@@ -40,27 +51,28 @@ int main()
             //Mouse wheel event
             if (event.type == sf::Event::MouseWheelMoved)
             {
-                src.setStr(event.mouseWheel.delta * 200);
-                src.setSize(src.getSize() + (event.mouseWheel.delta));
+
             }
         }
 
         std::ostringstream stream;
 
-        stream << std::setprecision(2) << std::fixed << particle.getVelocity();
-        UI.setVelocityText(stream.str());
-        stream.flush();
-        UI.setMassText(std::to_string(static_cast<int>(src.getStr())));
+
+
+
+
+        //Gui stuff - useless rightnow
+        //stream << std::setprecision(2) << std::fixed << particle.getVelocity();
+        //UI.setVelocityText(stream.str());
+        //stream.flush();
+        //UI.setMassText(std::to_string(static_cast<int>(src.getStr())));
 
 
 
         //Render
         window.clear();
-        src.render(window);
-        particle.render(window);
-        particle.updatePhysics(src);
-        particle2.render(window);
-        particle2.updatePhysics(src);
+        space.renderAllObjects(window);
+        space.updatePhysics();
         UI.renderUI(window);
 
         window.display();

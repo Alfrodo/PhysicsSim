@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+
 class SpaceObject
 {
 protected:
@@ -9,8 +10,12 @@ protected:
     sf::CircleShape obj_shape;
 
 public:
-        SpaceObject(float pos_x, float pos_y, float size);
+    enum SpaceObjectType {
+            GRAVITYSOURCE,
+            PARTICLE
+        };
 
+        SpaceObject(float pos_x, float pos_y, float size);
         void render(sf::RenderWindow& window);
         void setSize(float size);
         sf::Vector2f getPos() const { return pos; }
