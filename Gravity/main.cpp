@@ -30,6 +30,7 @@ int main()
     //Init Objects and add to Space
     space.addGravitySource(new GravitySource(1200, 500, 15, 20000));
     space.addGravitySource(new GravitySource (400, 500, 15, 20000));
+    
 
 
     //Add random spawned particles
@@ -51,9 +52,12 @@ int main()
                 window.close();
 
             //Mouse wheel event
-            if (event.type == sf::Event::MouseWheelMoved)
+            if (event.type == sf::Event::MouseButtonPressed)
             {
+                if (event.mouseButton.button == sf::Mouse::Left)
+                {
 
+                }
             }
         }
 

@@ -18,5 +18,7 @@ public:
 
 	void renderAllObjects(sf::RenderWindow& window);
 	void updatePhysics();
+
+	GravitySource& getGravitySourceByCoordinates(int x, int y);
 };
 

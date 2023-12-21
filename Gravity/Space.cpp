@@ -34,3 +34,10 @@ void Space::updatePhysics() {
 		
 	}
 }
+
+GravitySource& Space::getGravitySourceByCoordinates(int x, int y)
+{
+	for (GravitySource* gs : grav_sources) {
+		//if (x <= gs->getPos().x + gs->getSize())
+	}
+}
