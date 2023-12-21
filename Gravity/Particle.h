@@ -9,6 +9,7 @@ class Particle : public SpaceObject
 
 public:
     Particle(float pos_x, float pos_y, float size, sf::Vector2f vel);
+    Particle(float pos_x, float pos_y, float size, sf::Vector2f vel, sf::Color color);
 
     void updatePhysics(GravitySource& s);
 

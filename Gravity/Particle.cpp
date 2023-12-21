@@ -4,7 +4,14 @@
     Particle::Particle(float pos_x, float pos_y, float size, sf::Vector2f vel) : SpaceObject(pos_x, pos_y, size)
     {
         this->vel = vel;
-        obj_shape.setFillColor(sf::Color::Green);
+        obj_shape.setFillColor(sf::Color::White);
+        type = SpaceObjectType::PARTICLE;
+    }
+
+    Particle::Particle(float pos_x, float pos_y, float size, sf::Vector2f vel, sf::Color color) : SpaceObject(pos_x, pos_y, size)
+    {
+        this->vel = vel;
+        obj_shape.setFillColor(color);
         type = SpaceObjectType::PARTICLE;
     }
 

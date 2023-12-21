@@ -34,9 +34,9 @@ int main()
 
     //Add 100 random spawned particles
 
-    for (int i = 0; i < 1000; i++)
+    for (int i = 0; i < 5000; i++)
     {
-        space.addParticle(new Particle (rand() % 1600, rand() % 1000, 5, sf::Vector2f(6, 0)));
+        space.addParticle(new Particle (rand() % 1600, rand() % 1000, 5, sf::Vector2f(6, 0), sf::Color(rand() % 255, rand() % 255, rand() % 255)));
     }
 
 
