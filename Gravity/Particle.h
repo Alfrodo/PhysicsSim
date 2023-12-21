@@ -15,4 +15,6 @@ public:
 
     float getVelocity() { return sqrt(vel.x * vel.x + vel.y * vel.y); }
 
+    void setColorToSpeed();
+
 };

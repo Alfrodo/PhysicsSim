@@ -38,4 +38,22 @@
         vel.y += acc_y;
 
         pos += vel;
+
+        //Set color depending of speed
+        setColorToSpeed();
+    }
+
+    void Particle::setColorToSpeed() {
+        //Scale vel ~ 0-100 0 = White
+        float clipped_velocity = getVelocity();
+        if (clipped_velocity > 15.f) {
+            clipped_velocity = 15.f;
+        }
+
+
+
+        int col_value = int((clipped_velocity / 15.f) * 255.f);
+        col_value = (255 - col_value);
+        obj_shape.setFillColor(sf::Color(255, col_value, col_value));
+        
     }

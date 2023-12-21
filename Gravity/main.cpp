@@ -28,15 +28,17 @@ int main()
     //Init Space
     Space space = Space();
     //Init Objects and add to Space
-    space.addGravitySource(new GravitySource(1200, 500, 15, 30000));
-    space.addGravitySource(new GravitySource (400, 500, 15, 30000));
+    space.addGravitySource(new GravitySource(1200, 500, 15, 20000));
+    space.addGravitySource(new GravitySource (400, 500, 15, 20000));
 
 
-    //Add 100 random spawned particles
+    //Add random spawned particles
 
     for (int i = 0; i < 5000; i++)
     {
-        space.addParticle(new Particle (rand() % 1600, rand() % 1000, 5, sf::Vector2f(6, 0), sf::Color(rand() % 255, rand() % 255, rand() % 255)));
+        //Random Colors
+        space.addParticle(new Particle (800, 200, 3, sf::Vector2f(6, 0.2 + (0.1 / 5000) * i), sf::Color(rand() % 255, rand() % 255, rand() % 255)));
+        //space.addParticle(new Particle(800, 200, 3, sf::Vector2f(6, 0.2 + (0.1 / 5000) * i)));
     }
 
 
